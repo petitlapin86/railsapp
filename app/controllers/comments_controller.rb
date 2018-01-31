@@ -13,7 +13,13 @@ before_action :set_post
   def update
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-    redirect_to @post 
+    redirect_to @post
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to @post
   end
 
   private
