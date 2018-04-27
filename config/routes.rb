@@ -1,5 +1,5 @@
-Rails.application.routes.draw do
-  devise_for :users
+Rails.application.routes.draw do  
+
   resources :posts do
     resources :comments
     #BELOW IS THE MANUAL EQUIVALENT TO THE SHORTCUT :comments
@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   #get '/pages/:id/edit', to: 'pages#edit', as: 'edit_page' #controller action that takes a get request and responds with html form
   #patch '/pages/:id', to: 'pages#update' # create a patch route
   #delete '/pages/:id', to: 'pages#destroy' #call delete method route to pages_controller destroy method
+
+devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
