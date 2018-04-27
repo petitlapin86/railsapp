@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :posts do
     resources :comments
     #BELOW IS THE MANUAL EQUIVALENT TO THE SHORTCUT :comments
